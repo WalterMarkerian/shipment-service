@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: shipment-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shipment_db?reWriteBatchedInserts=true
+    username: shipment_user
+    password: shipment_pass
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 1
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        physical_naming_strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
